@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIET BCA Day 3 Python Operators Conditions Loops</title>
+<style>
+:root{--navy:#0f2942;--blue:#1a5f9e;--lightblue:#e8f2fb;--accent:#2b8a3e;--warn-bg:#fff4e5;--warn-border:#e8a33d;--info-bg:#e8f2fb;--info-border:#1a5f9e;--code-bg:#0f2942;--code-text:#e8f2fb;--gray:#555;--line:#d7e2ec;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;margin:0;padding:0;color:#20303f;line-height:1.65;background:#fbfcfe;font-size:15.5px}.page{max-width:980px;margin:0 auto;padding:30px 40px 60px}.titlepage{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(160deg,var(--navy) 0%,var(--blue) 100%);color:#fff;padding:60px 20px}.titlepage h1{font-size:42px;margin-bottom:10px;letter-spacing:1px;line-height:1.15}.titlepage h2{font-size:20px;font-weight:400;color:#cfe4f7;margin-top:0}.badge{margin-top:40px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:14px 26px;border-radius:8px;font-size:14px;line-height:1.8;text-align:left}.footer-note{margin-top:50px;font-size:13px;color:#cfe4f7}.toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 35px;margin:30px 0 50px}.toc h2{margin-top:0;color:var(--navy)}.toc li{margin-bottom:6px}.toc a{color:var(--blue);text-decoration:none}.module-header{background:var(--navy);color:#fff;padding:22px 30px;border-radius:10px;margin:40px 0 25px}.module-header h1{margin:0;font-size:26px}.module-header p{margin:6px 0 0;color:#cfe4f7;font-size:14px}h2.topic{color:var(--navy);border-bottom:3px solid var(--blue);padding-bottom:6px;margin-top:45px;font-size:21px}h3.subtopic{color:var(--blue);margin-top:28px;font-size:17px}h3.practical-title{color:#fff;background:var(--accent);display:inline-block;padding:6px 16px;border-radius:6px;margin-top:20px;font-size:15px}.box{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:14.5px}.info{background:var(--info-bg);border-left:5px solid var(--info-border)}.warn{background:var(--warn-bg);border-left:5px solid var(--warn-border)}.box strong.tag{display:block;text-transform:uppercase;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px;color:var(--gray)}.run-loc{display:inline-block;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:5px 5px 0 0;font-family:monospace;margin-bottom:-2px}pre{background:var(--code-bg);color:var(--code-text);padding:16px 18px;border-radius:0 8px 8px 8px;overflow-x:auto;font-size:13.5px;margin:0 0 16px;line-height:1.5}code{font-family:"Consolas","Monaco",monospace}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}tr:nth-child(even){background:#f4f8fc}ol.steps li{margin-bottom:6px}.summary-box{background:#eef8f0;border:1px solid #bfe3c8;border-left:5px solid var(--accent);padding:16px 20px;border-radius:8px;margin:30px 0 10px}hr.sep{border:none;border-top:1px dashed var(--line);margin:35px 0}@media(max-width:720px){.page{padding:22px 16px 50px}.titlepage h1{font-size:32px}table{font-size:13px}}
+</style></head>
+<body><div class="titlepage"><h1>Python Day 3 Detailed Notes</h1><h2>Operators, Conditional Statements, Loops and Student Marks Management Project</h2><div class="badge">Language: Simple Hinglish<br>Session Duration: 5 Hours<br>Format: Theory + Real Use Case + 2 Examples per Topic + Output + Detailed Code Explanation<br>Project: Student Marks Management System</div><div class="footer-note">NIET BCA Python Programming Class</div></div><div class="page"><div class="toc"><h2>Table of Contents</h2><ol><li><a href="#arithmetic">Arithmetic Operators</a></li>
+<li><a href="#relational">Relational Operators</a></li>
+<li><a href="#logical">Logical Operators</a></li>
+<li><a href="#assignment">Assignment Operators</a></li>
+<li><a href="#membership">Membership Operators</a></li>
+<li><a href="#identity">Identity Operators</a></li>
+<li><a href="#precedence">Operator Precedence</a></li>
+<li><a href="#expression">Expression Evaluation</a></li>
+<li><a href="#if">if Statement</a></li>
+<li><a href="#ifelse">if-else Statement</a></li>
+<li><a href="#ifelif">if-elif-else</a></li>
+<li><a href="#nested">Nested Conditions</a></li>
+<li><a href="#loops">Introduction to Loops</a></li>
+<li><a href="#forloop">for Loop</a></li>
+<li><a href="#whileloop">while Loop</a></li>
+<li><a href="#breakcontinuepass">break, continue, pass</a></li>
+<li><a href="#range">Range Function</a></li>
+<li><a href="#patterns">Pattern-Based Programs</a></li>
+<li><a href="#project">Student Marks Management System</a></li>
+<li><a href="#student-notes">Student Notes</a></li></ol></div><div class="module-header"><h1>Day 3 - Operators, Conditions, Loops and Mini Project</h1><p>Har topic individually detailed explanation, real-world use case, practical examples and code explanation ke saath diya gaya hai.</p></div><h2 id="arithmetic" class="topic">1. Arithmetic Operators</h2>
+<p>Arithmetic operators mathematical calculations ke liye use hote hain. Python me addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, floor division <code>//</code>, modulus <code>%</code> aur power <code>**</code> common arithmetic operators hain.</p>
+<p>Ye operators numbers ke saath work karte hain. Marks total karna, percentage calculate karna, bill banana, discount nikalna, salary calculate karna, area calculate karna jaise tasks me arithmetic operators use hote hain.</p>
+<p>Beginner ke liye important point hai ki har operator ka output alag meaning deta hai. <code>/</code> decimal division deta hai, <code>//</code> integer quotient deta hai, aur <code>%</code> remainder deta hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Billing apps, marks calculators, shopping carts, EMI calculators aur salary systems me arithmetic operators ka use hota hai.</div>
+<h3 class="practical-title">Practical arithmetic.1 - Shopping Bill Calculation</h3>
+<p>Item price aur quantity ke through total bill calculate karna arithmetic operator ka real use case hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>item_price = 120
+quantity = 3
+total_bill = item_price * quantity
+print(&quot;Total Bill:&quot;, total_bill)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Total Bill: 360</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>item_price = 120</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>quantity = 3</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>total_bill = item_price * quantity</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Total Bill:&quot;, total_bill)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical arithmetic.2 - Percentage Calculation</h3>
+<p>Marks ke total se percentage calculate karna school/college systems me common hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>total_marks = 435
+subjects = 5
+percentage = total_marks / subjects
+print(&quot;Percentage:&quot;, percentage)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Percentage: 87.0</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>total_marks = 435</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>subjects = 5</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>percentage = total_marks / subjects</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Percentage:&quot;, percentage)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="relational" class="topic">2. Relational Operators</h2>
+<p>Relational operators two values ko compare karte hain. Ye result me True ya False dete hain. Common relational operators hain <code>></code>, <code><</code>, <code>>=</code>, <code><=</code>, <code>==</code>, aur <code>!=</code>.</p>
+<p>Comparison ka use decision making me hota hai. Example: marks 40 se zyada hain ya nahi, age 18 se zyada hai ya nahi, password match hai ya nahi.</p>
+<p>Relational operator ka output boolean hota hai. Ye boolean output usually <code>if</code> statements me use hota hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Eligibility check, pass/fail result, stock alert, login matching aur age verification me relational operators use hote hain.</div>
+<h3 class="practical-title">Practical relational.1 - Voting Eligibility</h3>
+<p>Age compare karke eligibility check karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>age = 19
+is_eligible = age &gt;= 18
+print(&quot;Eligible for voting:&quot;, is_eligible)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Eligible for voting: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>age = 19</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>is_eligible = age &gt;= 18</code></td><td>Ye line program ke flow ka important part hai. Isko previous line aur next line ke context me samajhna chahiye. Har line ka role hota hai: data store karna, condition check karna, loop repeat karna, calculation karna ya output show karna. Code ko line by line read karne se logic clear hota hai.</td></tr>
+<tr><td>3</td><td><code>print(&quot;Eligible for voting:&quot;, is_eligible)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical relational.2 - Pass Marks Check</h3>
+<p>Marks ko passing marks se compare karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks = 32
+passing_marks = 35
+result = marks &gt;= passing_marks
+print(&quot;Student Passed:&quot;, result)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Student Passed: False</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks = 32</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>passing_marks = 35</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>result = marks &gt;= passing_marks</code></td><td>Ye line program ke flow ka important part hai. Isko previous line aur next line ke context me samajhna chahiye. Har line ka role hota hai: data store karna, condition check karna, loop repeat karna, calculation karna ya output show karna. Code ko line by line read karne se logic clear hota hai.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Student Passed:&quot;, result)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="logical" class="topic">3. Logical Operators</h2>
+<p>Logical operators multiple conditions ko combine karte hain. Python me <code>and</code>, <code>or</code>, aur <code>not</code> logical operators hain.</p>
+<p><code>and</code> tab True hota hai jab dono conditions True hon. <code>or</code> tab True hota hai jab at least ek condition True ho. <code>not</code> condition ka result reverse kar deta hai.</p>
+<p>Logical operators real decisions me useful hote hain jahan ek se zyada requirement check karni hoti hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Scholarship eligibility, login access, attendance + marks check, discount eligibility aur form validation me logical operators ka use hota hai.</div>
+<h3 class="practical-title">Practical logical.1 - Scholarship Eligibility</h3>
+<p>Marks aur attendance dono condition check karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks = 88
+attendance = 82
+is_eligible = marks &gt;= 85 and attendance &gt;= 75
+print(&quot;Scholarship Eligible:&quot;, is_eligible)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Scholarship Eligible: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks = 88</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>attendance = 82</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>is_eligible = marks &gt;= 85 and attendance &gt;= 75</code></td><td>Ye line program ke flow ka important part hai. Isko previous line aur next line ke context me samajhna chahiye. Har line ka role hota hai: data store karna, condition check karna, loop repeat karna, calculation karna ya output show karna. Code ko line by line read karne se logic clear hota hai.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Scholarship Eligible:&quot;, is_eligible)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical logical.2 - Login Permission</h3>
+<p>Username ya email match hone par access allow kar sakte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>username = &quot;admin&quot;
+email = &quot;admin@example.com&quot;
+can_login = username == &quot;admin&quot; or email == &quot;owner@example.com&quot;
+print(&quot;Login Allowed:&quot;, can_login)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Login Allowed: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>username = &quot;admin&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>email = &quot;admin@example.com&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>can_login = username == &quot;admin&quot; or email == &quot;owner@example.com&quot;</code></td><td>Ye line program ke flow ka important part hai. Isko previous line aur next line ke context me samajhna chahiye. Har line ka role hota hai: data store karna, condition check karna, loop repeat karna, calculation karna ya output show karna. Code ko line by line read karne se logic clear hota hai.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Login Allowed:&quot;, can_login)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="assignment" class="topic">4. Assignment Operators</h2>
+<p>Assignment operators variables ki value store ya update karte hain. Basic assignment operator <code>=</code> hai. Short update operators jaise <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code> value ko update karte hain.</p>
+<p>Example: <code>total += marks</code> ka matlab hai total ki old value me marks add karo aur result wapas total me store karo.</p>
+<p>Assignment operators loops aur running totals me bahut useful hote hain.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Wallet balance update, marks total, stock quantity, cart total, score update aur counters me assignment operators use hote hain.</div>
+<h3 class="practical-title">Practical assignment.1 - Wallet Balance Update</h3>
+<p>Recharge ke baad wallet balance update karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>wallet_balance = 500
+recharge_amount = 200
+wallet_balance += recharge_amount
+print(&quot;Updated Balance:&quot;, wallet_balance)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Updated Balance: 700</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>wallet_balance = 500</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>recharge_amount = 200</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>wallet_balance += recharge_amount</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Updated Balance:&quot;, wallet_balance)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical assignment.2 - Stock Quantity Update</h3>
+<p>Sale ke baad stock quantity reduce karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>stock = 50
+sold_items = 8
+stock -= sold_items
+print(&quot;Remaining Stock:&quot;, stock)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Remaining Stock: 42</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>stock = 50</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>sold_items = 8</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>stock -= sold_items</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Remaining Stock:&quot;, stock)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="membership" class="topic">5. Membership Operators</h2>
+<p>Membership operators check karte hain ki koi value kisi sequence ya collection me present hai ya nahi. Python me <code>in</code> aur <code>not in</code> membership operators hain.</p>
+<p><code>in</code> True deta hai agar value collection me present ho. <code>not in</code> True deta hai agar value collection me present na ho.</p>
+<p>Ye operators lists, strings, tuples aur dictionaries ke keys ke saath commonly use hote hain.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Course availability, username blacklist, keyword search, subject list check aur menu option validation me membership operators use hote hain.</div>
+<h3 class="practical-title">Practical membership.1 - Course Availability</h3>
+<p>Check karte hain ki selected course available hai ya nahi.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>available_courses = [&quot;Python&quot;, &quot;Java&quot;, &quot;SQL&quot;]
+selected_course = &quot;Python&quot;
+print(&quot;Course Available:&quot;, selected_course in available_courses)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Course Available: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>available_courses = [&quot;Python&quot;, &quot;Java&quot;, &quot;SQL&quot;]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>selected_course = &quot;Python&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>print(&quot;Course Available:&quot;, selected_course in available_courses)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical membership.2 - Keyword Search</h3>
+<p>Message me important keyword present hai ya nahi check karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>message = &quot;Your result is declared&quot;
+keyword = &quot;result&quot;
+print(&quot;Keyword Found:&quot;, keyword in message)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Keyword Found: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>message = &quot;Your result is declared&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>keyword = &quot;result&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>print(&quot;Keyword Found:&quot;, keyword in message)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="identity" class="topic">6. Identity Operators</h2>
+<p>Identity operators check karte hain ki two variables same object ko refer kar rahe hain ya nahi. Python me <code>is</code> aur <code>is not</code> identity operators hain.</p>
+<p><code>==</code> values compare karta hai, lekin <code>is</code> memory identity compare karta hai. Ye difference samajhna important hai.</p>
+<p>Beginners ko mostly <code>is</code> ka use <code>None</code> check karne me dekhna chahiye, jaise <code>value is None</code>.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>None check, object reference check aur advanced Python memory behavior samajhne me identity operators useful hote hain.</div>
+<h3 class="practical-title">Practical identity.1 - None Check</h3>
+<p>Missing value check karne ke liye identity operator use hota hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>student_name = None
+print(&quot;Name Missing:&quot;, student_name is None)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Name Missing: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>student_name = None</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>print(&quot;Name Missing:&quot;, student_name is None)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical identity.2 - Same Object Check</h3>
+<p>Do variables same list ko refer kar rahe hain ya nahi.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks1 = [80, 90]
+marks2 = marks1
+print(&quot;Same Object:&quot;, marks1 is marks2)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Same Object: True</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks1 = [80, 90]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>marks2 = marks1</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>print(&quot;Same Object:&quot;, marks1 is marks2)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="precedence" class="topic">7. Operator Precedence</h2>
+<p>Operator precedence batata hai ki expression me kaunsa operator pehle solve hoga. Mathematics ki tarah Python me bhi multiplication/division usually addition/subtraction se pehle solve hote hain.</p>
+<p>Parentheses <code>()</code> ka use karke precedence control kar sakte hain. Jo part brackets me hota hai wo pehle solve hota hai.</p>
+<p>Precedence samajhna important hai kyunki wrong order se calculation wrong ho sakti hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Bill calculation, percentage formula, salary calculation aur discount formulas me precedence ka correct use important hota hai.</div>
+<h3 class="practical-title">Practical precedence.1 - Bill with Tax</h3>
+<p>Multiplication addition se pehle solve hoti hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>price = 100
+tax = 18
+total = price + price * tax / 100
+print(&quot;Total Price:&quot;, total)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Total Price: 118.0</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>price = 100</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>tax = 18</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>total = price + price * tax / 100</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Total Price:&quot;, total)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical precedence.2 - Parentheses Change Result</h3>
+<p>Brackets calculation order change karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>result1 = 10 + 5 * 2
+result2 = (10 + 5) * 2
+print(&quot;Without Brackets:&quot;, result1)
+print(&quot;With Brackets:&quot;, result2)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Without Brackets: 20
+With Brackets: 30</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>result1 = 10 + 5 * 2</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>result2 = (10 + 5) * 2</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>print(&quot;Without Brackets:&quot;, result1)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>print(&quot;With Brackets:&quot;, result2)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="expression" class="topic">8. Expression Evaluation</h2>
+<p>Expression values, variables aur operators ka combination hota hai jo final result produce karta hai. Example: <code>marks / subjects</code> ek expression hai.</p>
+<p>Python expression ko evaluate karta hai, yani values ko operators ke rules ke according solve karta hai.</p>
+<p>Expression evaluation programming logic ka core part hai. Har formula ek expression hota hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Salary calculation, average score, final bill, discount price, grade percentage aur tax calculation expressions se bante hain.</div>
+<h3 class="practical-title">Practical expression.1 - Net Salary</h3>
+<p>Salary se tax subtract karke net salary nikalte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>salary = 30000
+tax = 3000
+net_salary = salary - tax
+print(&quot;Net Salary:&quot;, net_salary)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Net Salary: 27000</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>salary = 30000</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>tax = 3000</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>net_salary = salary - tax</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Net Salary:&quot;, net_salary)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical expression.2 - Average Marks</h3>
+<p>Total marks ko subjects se divide karke average nikalte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>total_marks = 420
+subjects = 5
+average = total_marks / subjects
+print(&quot;Average Marks:&quot;, average)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Average Marks: 84.0</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>total_marks = 420</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>subjects = 5</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>average = total_marks / subjects</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>print(&quot;Average Marks:&quot;, average)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="if" class="topic">9. if Statement</h2>
+<p><code>if</code> statement decision making ke liye use hota hai. Agar condition True hoti hai to if block run hota hai. Agar condition False hoti hai to block skip hota hai.</p>
+<p><code>if</code> ke baad condition aur colon <code>:</code> lagta hai. Uske andar ka code indentation ke saath likha jata hai.</p>
+<p>if statement one-way decision ke liye useful hai, jab hume sirf True case me action lena ho.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Low stock alert, age eligibility, high marks appreciation aur payment success message me if statement use hota hai.</div>
+<h3 class="practical-title">Practical if.1 - Age Check</h3>
+<p>Age 18 ya zyada hone par message print hoga.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>age = 20
+if age &gt;= 18:
+    print(&quot;You are eligible&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>You are eligible</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>age = 20</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if age &gt;= 18:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;You are eligible&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical if.2 - Stock Alert</h3>
+<p>Stock low hone par alert print hota hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>stock = 4
+if stock &lt; 5:
+    print(&quot;Low stock alert&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Low stock alert</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>stock = 4</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if stock &lt; 5:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;Low stock alert&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="ifelse" class="topic">10. if-else Statement</h2>
+<p><code>if-else</code> two-way decision ke liye use hota hai. Agar condition True hai to if block run hota hai, warna else block run hota hai.</p>
+<p>else ke saath condition nahi hoti. Else default case handle karta hai.</p>
+<p>Pass/fail, eligible/not eligible, even/odd jaise decisions me if-else common hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Result status, login success/fail, payment complete/pending, number even/odd me if-else use hota hai.</div>
+<h3 class="practical-title">Practical ifelse.1 - Pass or Fail</h3>
+<p>Marks ke basis par pass/fail decide karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks = 42
+if marks &gt;= 35:
+    print(&quot;Pass&quot;)
+else:
+    print(&quot;Fail&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Pass</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks = 42</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if marks &gt;= 35:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;Pass&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>5</td><td><code>    print(&quot;Fail&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical ifelse.2 - Even or Odd</h3>
+<p>Number divisible by 2 hai ya nahi check karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>number = 7
+if number % 2 == 0:
+    print(&quot;Even Number&quot;)
+else:
+    print(&quot;Odd Number&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Odd Number</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>number = 7</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if number % 2 == 0:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;Even Number&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>5</td><td><code>    print(&quot;Odd Number&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="ifelif" class="topic">11. if-elif-else</h2>
+<p><code>if-elif-else</code> multiple conditions handle karne ke liye use hota hai. Pehle if check hota hai, phir elif conditions one by one check hoti hain, aur last me else fallback hota hai.</p>
+<p>Jab multiple categories ya ranges handle karni ho tab if-elif-else best hota hai.</p>
+<p>Grade system, ticket price category, performance level aur menu options me iska use hota hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Grade assignment, age category, discount slab, performance rating aur menu-based programs me if-elif-else use hota hai.</div>
+<h3 class="practical-title">Practical ifelif.1 - Grade Assignment</h3>
+<p>Percentage ke basis par grade assign karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>percentage = 82
+if percentage &gt;= 90:
+    print(&quot;Grade A&quot;)
+elif percentage &gt;= 75:
+    print(&quot;Grade B&quot;)
+elif percentage &gt;= 60:
+    print(&quot;Grade C&quot;)
+else:
+    print(&quot;Grade D&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Grade B</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>percentage = 82</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if percentage &gt;= 90:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;Grade A&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>elif percentage &gt;= 75:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>5</td><td><code>    print(&quot;Grade B&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>6</td><td><code>elif percentage &gt;= 60:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>7</td><td><code>    print(&quot;Grade C&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>8</td><td><code>else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>9</td><td><code>    print(&quot;Grade D&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical ifelif.2 - Ticket Category</h3>
+<p>Age ke basis par ticket category decide hoti hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>age = 12
+if age &lt; 5:
+    print(&quot;Free Ticket&quot;)
+elif age &lt;= 18:
+    print(&quot;Child Ticket&quot;)
+else:
+    print(&quot;Adult Ticket&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Child Ticket</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>age = 12</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if age &lt; 5:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    print(&quot;Free Ticket&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>elif age &lt;= 18:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>5</td><td><code>    print(&quot;Child Ticket&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>6</td><td><code>else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>7</td><td><code>    print(&quot;Adult Ticket&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="nested" class="topic">12. Nested Conditions</h2>
+<p>Nested condition ka matlab hai ek if ke andar doosra if. Jab decision ke andar aur detailed decision chahiye hota hai tab nested conditions use hoti hain.</p>
+<p>Nested conditions ko carefully indent karna zaroori hai. Wrong indentation se logic wrong ho sakta hai.</p>
+<p>Nested logic tab useful hota hai jab pehle main eligibility check ho, phir inside details check hon.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Login ke baad role check, marks pass hone ke baad distinction check, payment success ke baad receipt generate karna nested conditions ke examples hain.</div>
+<h3 class="practical-title">Practical nested.1 - Login and Role Check</h3>
+<p>Pehle login check, phir role check.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>is_logged_in = True
+role = &quot;admin&quot;
+if is_logged_in:
+    if role == &quot;admin&quot;:
+        print(&quot;Admin Dashboard&quot;)
+    else:
+        print(&quot;User Dashboard&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Admin Dashboard</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>is_logged_in = True</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>role = &quot;admin&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>if is_logged_in:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>4</td><td><code>    if role == &quot;admin&quot;:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>5</td><td><code>        print(&quot;Admin Dashboard&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>6</td><td><code>    else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>7</td><td><code>        print(&quot;User Dashboard&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical nested.2 - Pass and Distinction</h3>
+<p>Pehle pass check, phir high score check.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks = 88
+if marks &gt;= 35:
+    if marks &gt;= 75:
+        print(&quot;Pass with Distinction&quot;)
+    else:
+        print(&quot;Pass&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Pass with Distinction</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks = 88</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>if marks &gt;= 35:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>3</td><td><code>    if marks &gt;= 75:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>4</td><td><code>        print(&quot;Pass with Distinction&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>5</td><td><code>    else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>6</td><td><code>        print(&quot;Pass&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="loops" class="topic">13. Introduction to Loops</h2>
+<p>Loop ka matlab hai kisi kaam ko repeatedly execute karna. Jab same code baar-baar likhna pade to loop use karte hain.</p>
+<p>Python me mostly <code>for</code> loop aur <code>while</code> loop use hote hain. for loop sequence/range par work karta hai, while loop condition par work karta hai.</p>
+<p>Loops repetitive tasks ko automate karte hain aur code length reduce karte hain.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Marks total karna, report lines print karna, attendance list process karna, countdown banana aur pattern print karna loops se hota hai.</div>
+<h3 class="practical-title">Practical loops.1 - Repeat Message</h3>
+<p>Same message multiple times print karna.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>for count in range(3):
+    print(&quot;Practice Python&quot;)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Practice Python
+Practice Python
+Practice Python</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>for count in range(3):</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>2</td><td><code>    print(&quot;Practice Python&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical loops.2 - Total Marks from List</h3>
+<p>List ke marks ka total nikalna.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks_list = [80, 90, 85]
+total = 0
+for marks in marks_list:
+    total += marks
+print(&quot;Total:&quot;, total)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Total: 255</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks_list = [80, 90, 85]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>total = 0</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>for marks in marks_list:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>4</td><td><code>    total += marks</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>5</td><td><code>print(&quot;Total:&quot;, total)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="forloop" class="topic">14. for Loop</h2>
+<p><code>for</code> loop sequence ke har item par repeat hota hai. Sequence list, string, tuple ya range ho sakti hai.</p>
+<p>for loop tab use hota hai jab repeat count ya collection known ho. Example: 5 subjects ke marks process karna.</p>
+<p>for loop me loop variable har iteration me current value hold karta hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Subject names print karna, marks total karna, report rows generate karna aur list items process karna for loop se hota hai.</div>
+<h3 class="practical-title">Practical forloop.1 - Print Subjects</h3>
+<p>Subjects list ke items print karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>subjects = [&quot;Python&quot;, &quot;Math&quot;, &quot;English&quot;]
+for subject in subjects:
+    print(subject)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Python
+Math
+English</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>subjects = [&quot;Python&quot;, &quot;Math&quot;, &quot;English&quot;]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>for subject in subjects:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>3</td><td><code>    print(subject)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical forloop.2 - Calculate Total</h3>
+<p>for loop se total calculate karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>marks = [70, 80, 90]
+total = 0
+for mark in marks:
+    total += mark
+print(&quot;Total Marks:&quot;, total)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Total Marks: 240</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>marks = [70, 80, 90]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>total = 0</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>3</td><td><code>for mark in marks:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>4</td><td><code>    total += mark</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>5</td><td><code>print(&quot;Total Marks:&quot;, total)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="whileloop" class="topic">15. while Loop</h2>
+<p><code>while</code> loop condition True rehne tak repeat hota hai. Jab condition False hoti hai loop stop ho jata hai.</p>
+<p>while loop use karte waqt condition update karna important hai, warna infinite loop ho sakta hai.</p>
+<p>while loop tab useful hai jab repeat count pehle se fixed nahi hota ya condition-based repetition chahiye.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Countdown, retry login, menu system, repeated input aur game loops me while loop use hota hai.</div>
+<h3 class="practical-title">Practical whileloop.1 - Countdown</h3>
+<p>Number ko decrease karke countdown print karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>count = 3
+while count &gt; 0:
+    print(count)
+    count -= 1</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>3
+2
+1</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>count = 3</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>while count &gt; 0:</code></td><td>Ye while loop line hai. <code>while</code> loop tab tak repeat hota hai jab tak condition True rehti hai. Isme condition update karna important hota hai, warna infinite loop ban sakta hai. Countdown, retry system, menu program aur repeated input tasks me while loop use hota hai.</td></tr>
+<tr><td>3</td><td><code>    print(count)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>4</td><td><code>    count -= 1</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical whileloop.2 - Savings Target</h3>
+<p>Savings target achieve hone tak loop chal sakta hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>savings = 0
+while savings &lt; 300:
+    savings += 100
+    print(&quot;Savings:&quot;, savings)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Savings: 100
+Savings: 200
+Savings: 300</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>savings = 0</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>while savings &lt; 300:</code></td><td>Ye while loop line hai. <code>while</code> loop tab tak repeat hota hai jab tak condition True rehti hai. Isme condition update karna important hota hai, warna infinite loop ban sakta hai. Countdown, retry system, menu program aur repeated input tasks me while loop use hota hai.</td></tr>
+<tr><td>3</td><td><code>    savings += 100</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>4</td><td><code>    print(&quot;Savings:&quot;, savings)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="breakcontinuepass" class="topic">16. break, continue, pass</h2>
+<p><code>break</code> loop ko stop karta hai. <code>continue</code> current iteration skip karta hai. <code>pass</code> empty placeholder hota hai.</p>
+<p>Ye loop control statements loop ke behavior ko control karte hain. Search, filtering, validation aur future code placeholder me ye useful hain.</p>
+<p>Inka use carefully karna chahiye, kyunki loop flow change hota hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Search result milte hi loop stop karna, absent student skip karna, future logic placeholder banana in statements se hota hai.</div>
+<h3 class="practical-title">Practical breakcontinuepass.1 - break Example</h3>
+<p>Required item milte hi loop stop karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>students = [&quot;Aman&quot;, &quot;Riya&quot;, &quot;Neha&quot;]
+for student in students:
+    if student == &quot;Riya&quot;:
+        print(&quot;Student found&quot;)
+        break</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Student found</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>students = [&quot;Aman&quot;, &quot;Riya&quot;, &quot;Neha&quot;]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>for student in students:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>3</td><td><code>    if student == &quot;Riya&quot;:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>4</td><td><code>        print(&quot;Student found&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>5</td><td><code>        break</code></td><td><code>break</code> loop ko immediately stop kar deta hai. Jab required result mil jaye ya invalid situation aa jaye, tab loop ko aur chalane ki zaroorat nahi hoti. Search program aur validation loop me <code>break</code> useful hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical breakcontinuepass.2 - continue Example</h3>
+<p>Absent student ko skip karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>students = [&quot;Aman&quot;, &quot;Absent&quot;, &quot;Neha&quot;]
+for student in students:
+    if student == &quot;Absent&quot;:
+        continue
+    print(student)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Aman
+Neha</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>students = [&quot;Aman&quot;, &quot;Absent&quot;, &quot;Neha&quot;]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>for student in students:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>3</td><td><code>    if student == &quot;Absent&quot;:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>4</td><td><code>        continue</code></td><td><code>continue</code> current iteration ko skip karta hai aur loop next iteration par chala jata hai. Jab kisi specific value ko ignore karna ho, tab continue use hota hai. Example: absent student ko skip karna ya invalid mark ignore karna.</td></tr>
+<tr><td>5</td><td><code>    print(student)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="range" class="topic">17. Range Function</h2>
+<p><code>range()</code> numbers ki sequence generate karta hai. Ye mostly for loop ke saath use hota hai.</p>
+<p><code>range(stop)</code>, <code>range(start, stop)</code>, aur <code>range(start, stop, step)</code> common forms hain.</p>
+<p>Important point: stop value include nahi hoti. Example <code>range(1, 5)</code> 1 se 4 tak numbers deta hai.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Roll numbers print karna, fixed repeat count, table print karna aur pattern programs me range function use hota hai.</div>
+<h3 class="practical-title">Practical range.1 - Print Roll Numbers</h3>
+<p>1 se 5 tak roll numbers print karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>for roll in range(1, 6):
+    print(&quot;Roll No:&quot;, roll)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>Roll No: 1
+Roll No: 2
+Roll No: 3
+Roll No: 4
+Roll No: 5</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>for roll in range(1, 6):</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>2</td><td><code>    print(&quot;Roll No:&quot;, roll)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical range.2 - Multiplication Table</h3>
+<p>range ka use table print karne me hota hai.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>number = 5
+for i in range(1, 6):
+    print(number, &quot;x&quot;, i, &quot;=&quot;, number * i)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>number = 5</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>2</td><td><code>for i in range(1, 6):</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>3</td><td><code>    print(number, &quot;x&quot;, i, &quot;=&quot;, number * i)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+<h2 id="patterns" class="topic">18. Pattern-Based Programs</h2>
+<p>Pattern programs loops ko strong karne ke liye use hote hain. Inme mostly nested loops use hote hain.</p>
+<p>Pattern problems se learner ko rows, columns, repetition aur loop control samajh aata hai.</p>
+<p>Pattern programming logic building ke liye useful hai, especially beginners ke liye.</p>
+<div class="box info"><strong class="tag">Real World Use Case</strong>Star patterns, number patterns aur report formatting me nested loops ka concept use hota hai.</div>
+<h3 class="practical-title">Practical patterns.1 - Star Triangle</h3>
+<p>Rows ke according stars print karte hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>for row in range(1, 5):
+    print(&quot;*&quot; * row)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>*
+**
+***
+****</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>for row in range(1, 5):</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>2</td><td><code>    print(&quot;*&quot; * row)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<h3 class="practical-title">Practical patterns.2 - Number Pattern</h3>
+<p>Row number ko repeat karke pattern banate hain.</p>
+<div class="run-loc">Python Code</div>
+<pre><code>for row in range(1, 5):
+    print(str(row) * row)</code></pre>
+<div class="run-loc">Output</div>
+<pre><code>1
+22
+333
+4444</code></pre>
+<h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>for row in range(1, 5):</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>2</td><td><code>    print(str(row) * row)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+
+<h2 id="project" class="topic">19. Mini Project - Student Marks Management System</h2>
+<p>Ye mini project Day 3 ke concepts ko combine karta hai. Isme input, arithmetic operators, relational operators, logical thinking, if-elif-else, loops, percentage calculation, grade assignment aur report display use hote hain.</p>
+<div class="box info"><strong class="tag">Project Features</strong>Student Data Input, Marks Calculation, Percentage Calculation, Grade Assignment, Result Display, Basic Report Generation.</div>
+<h3 class="practical-title">Complete Project Code</h3>
+<div class="run-loc">Python Code</div>
+<pre><code>student_name = input(&quot;Enter student name: &quot;)
+roll_number = input(&quot;Enter roll number: &quot;)
+subjects = [&quot;Python&quot;, &quot;Math&quot;, &quot;English&quot;, &quot;Computer&quot;, &quot;Science&quot;]
+marks_list = []
+
+for subject in subjects:
+    marks = float(input(&quot;Enter marks for &quot; + subject + &quot;: &quot;))
+    marks_list.append(marks)
+
+total_marks = 0
+for marks in marks_list:
+    total_marks += marks
+
+percentage = total_marks / len(subjects)
+
+if percentage &gt;= 90:
+    grade = &quot;A+&quot;
+elif percentage &gt;= 75:
+    grade = &quot;A&quot;
+elif percentage &gt;= 60:
+    grade = &quot;B&quot;
+elif percentage &gt;= 35:
+    grade = &quot;C&quot;
+else:
+    grade = &quot;Fail&quot;
+
+print(&quot;----- Student Report -----&quot;)
+print(&quot;Name:&quot;, student_name)
+print(&quot;Roll Number:&quot;, roll_number)
+print(&quot;Total Marks:&quot;, total_marks)
+print(&quot;Percentage:&quot;, percentage)
+print(&quot;Grade:&quot;, grade)</code></pre><div class="run-loc">Output</div>
+<pre><code>Enter student name: Aman
+Enter roll number: 101
+Enter marks for Python: 90
+Enter marks for Math: 85
+Enter marks for English: 80
+Enter marks for Computer: 88
+Enter marks for Science: 92
+----- Student Report -----
+Name: Aman
+Roll Number: 101
+Total Marks: 435.0
+Percentage: 87.0
+Grade: A</code></pre><h3 class="subtopic">Detailed Code Explanation</h3><table><thead><tr><th>Line</th><th>Code</th><th>Detailed Explanation</th></tr></thead><tbody>
+<tr><td>1</td><td><code>student_name = input(&quot;Enter student name: &quot;)</code></td><td>Is line me user se keyboard ke through value li ja rahi hai. Brackets ke andar jo message hai usko prompt bolte hain, jo user ko batata hai kya enter karna hai. Entered value variable me store hoti hai. Input program ko interactive banata hai. Isse program fixed data par nahi, user ke real data par work karta hai.</td></tr>
+<tr><td>2</td><td><code>roll_number = input(&quot;Enter roll number: &quot;)</code></td><td>Is line me user se keyboard ke through value li ja rahi hai. Brackets ke andar jo message hai usko prompt bolte hain, jo user ko batata hai kya enter karna hai. Entered value variable me store hoti hai. Input program ko interactive banata hai. Isse program fixed data par nahi, user ke real data par work karta hai.</td></tr>
+<tr><td>3</td><td><code>subjects = [&quot;Python&quot;, &quot;Math&quot;, &quot;English&quot;, &quot;Computer&quot;, &quot;Science&quot;]</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>4</td><td><code>marks_list = []</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>6</td><td><code>for subject in subjects:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>7</td><td><code>    marks = float(input(&quot;Enter marks for &quot; + subject + &quot;: &quot;))</code></td><td>Is line me user se input liya ja raha hai aur saath me type casting bhi ho rahi hai. <code>input()</code> value ko string ke roop me laata hai. Calculation ke liye us value ko decimal number me convert karna zaroori hota hai. Isliye <code>int()</code> ya <code>float()</code> use hota hai. Marks, age, quantity, price aur percentage jaise values me ye pattern real applications me bahut common hai.</td></tr>
+<tr><td>8</td><td><code>    marks_list.append(marks)</code></td><td>Ye line program ke flow ka important part hai. Isko previous line aur next line ke context me samajhna chahiye. Har line ka role hota hai: data store karna, condition check karna, loop repeat karna, calculation karna ya output show karna. Code ko line by line read karne se logic clear hota hai.</td></tr>
+<tr><td>10</td><td><code>total_marks = 0</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>11</td><td><code>for marks in marks_list:</code></td><td>Ye loop line hai. <code>for</code> loop kisi sequence, range ya collection par repeat hota hai. Har round me ek value variable me aati hai aur indented block execute hota hai. Repeated tasks jaise marks total karna, names print karna, report lines generate karna me for loop useful hai.</td></tr>
+<tr><td>12</td><td><code>    total_marks += marks</code></td><td>Ye assignment operator ka use hai. Assignment operator existing variable ki value ko update karta hai. Example: <code>+=</code> old value me new value add karke same variable me store karta hai. Counters, totals, wallet balance, stock quantity aur loop calculations me assignment operators code ko short aur readable banate hain.</td></tr>
+<tr><td>14</td><td><code>percentage = total_marks / len(subjects)</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>16</td><td><code>if percentage &gt;= 90:</code></td><td>Ye condition checking line hai. <code>if</code> ke baad condition likhi jaati hai. Agar condition True hoti hai to indented block run hota hai. Agar condition False hoti hai to block skip ho jata hai. Decision making programs me <code>if</code> bahut important hota hai, jaise pass/fail, eligible/not eligible, login allowed/not allowed.</td></tr>
+<tr><td>17</td><td><code>    grade = &quot;A+&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>18</td><td><code>elif percentage &gt;= 75:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>19</td><td><code>    grade = &quot;A&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>20</td><td><code>elif percentage &gt;= 60:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>21</td><td><code>    grade = &quot;B&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>22</td><td><code>elif percentage &gt;= 35:</code></td><td>Ye additional condition line hai. <code>elif</code> tab check hota hai jab previous <code>if</code> ya <code>elif</code> False ho chuka ho. Multiple possibilities handle karne ke liye <code>elif</code> useful hota hai. Grade system, ticket category aur menu selection me iska use hota hai.</td></tr>
+<tr><td>23</td><td><code>    grade = &quot;C&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>24</td><td><code>else:</code></td><td>Ye fallback block hai. Jab upar wali conditions False hoti hain, tab <code>else</code> ka block run hota hai. <code>else</code> ke saath condition nahi likhi jaati. Ye default result handle karta hai. Isse program incomplete decisions se bach jata hai.</td></tr>
+<tr><td>25</td><td><code>    grade = &quot;Fail&quot;</code></td><td>Ye assignment line hai. Right side ki value ya expression calculate hota hai aur result left side variable me store hota hai. Programming me <code>=</code> storage instruction hota hai. Variable ko meaningful naam dene se code easily samajh aata hai. Is stored value ko baad me condition, calculation ya output me use kar sakte hain.</td></tr>
+<tr><td>27</td><td><code>print(&quot;----- Student Report -----&quot;)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>28</td><td><code>print(&quot;Name:&quot;, student_name)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>29</td><td><code>print(&quot;Roll Number:&quot;, roll_number)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>30</td><td><code>print(&quot;Total Marks:&quot;, total_marks)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>31</td><td><code>print(&quot;Percentage:&quot;, percentage)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+<tr><td>32</td><td><code>print(&quot;Grade:&quot;, grade)</code></td><td>Ye output line hai. <code>print()</code> screen par result, message ya variable ki value show karta hai. Brackets ke andar text, number, variable ya expression diya ja sakta hai. Agar comma use hota hai to Python values ke beech space add karta hai. Output ko label ke saath print karna best practice hai kyunki user ko result ka meaning clear hota hai.</td></tr>
+</tbody></table>
+<hr class="sep">
+
+<h2 id="student-notes" class="topic">20. Student Share Notes and Homework</h2>
+<div class="summary-box"><strong class="tag">Day 3 Summary</strong>Day 3 me operators, conditions aur loops ka strong foundation cover hua. Operators calculations and comparisons ke liye use hote hain. Conditions decision making ke liye use hoti hain. Loops repeated tasks automate karte hain. Mini project me in sab concepts ko combine karke Student Marks Management System banaya gaya.</div>
+<h3 class="subtopic">Homework Tasks</h3>
+<ol class="steps">
+<li>Marks Management Project me 6 subjects add karo.</li>
+<li>Project me pass/fail status separately print karo.</li>
+<li>Project me highest marks aur lowest marks find karo.</li>
+<li>for loop se 1 to 10 multiplication table print karo.</li>
+<li>Nested loop se square star pattern print karo.</li>
+</ol>
+<div class="box warn"><strong class="tag">Practice Rule</strong>Har example khud type karke run karna hai. Output observe karna hai. Error aaye to line by line check karna hai. Operators, conditions aur loops tab strong honge jab daily practice hogi.</div>
+</div></body></html>
